@@ -61,7 +61,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USES=		compiler
 
-nUSE_GITHUB=	yes
+USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 GH_COMMIT=	aaddfa2
 GH_TAGNAME=	v${PORTVERSION}
