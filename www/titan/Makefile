@@ -1,0 +1,29 @@
+PORTNAME=	titan
+PORTVERSION=	0.1.0
+PORTREVISION= 1
+CATEGORIES=	www
+MASTER_SITES=	https://s3.amazonaws.com/gibbon-deployment/titan-dbf428d.tar.gz
+DISTFILES=	titan-dbf428d.tar.gz
+
+MAINTAINER=	petar@wunki.org
+COMMENT=	Central API for Gibbon
+
+LICENSE=	MPL
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+
+USES=		compiler
+STRIP=		# stripping can break go binaries
+
+post-patch:
+	${MKDIR} ${WRKSRC}/src/github.com/gibbonco/titan
+	cd ${WRKSRC}
+	ls -la
+
+do-build:
+	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmt/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt/bin/tt ${STAGEDIR}${PREFIX}/bin/
+
+.include <bsd.port.mk>
