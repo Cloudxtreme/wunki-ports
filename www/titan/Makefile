@@ -3,7 +3,7 @@ PORTVERSION=	0.1.0
 PORTREVISION= 1
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/gibbon-deployment/
-DISTFILES=	titan-dbf428d.tar.gz
+DISTFILES=	titan-73df5e5.tar.gz
 
 MAINTAINER=	petar@wunki.org
 COMMENT=	Central API for Gibbon
@@ -21,7 +21,6 @@ post-patch:
 	@${MV} ${WRKDIR}/titan ${WRKSRC}/src/github.com/gibbonco
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/gibbonco/titan; GOPATH=${WRKSRC} go get -d ./...
 	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
 
 do-install:
