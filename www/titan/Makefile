@@ -10,7 +10,8 @@ COMMENT=	Central API for Gibbon
 
 LICENSE=	MPL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go\
+	${LOCALBASE}/bin/git:${PORTSDIR/devel/git}
 
 USES=		compiler
 STRIP=		# stripping can break go binaries
@@ -20,7 +21,7 @@ post-patch:
 	@${MV} ${WRKDIR}/titan ${WRKSRC}/src/github.com/gibbonco
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/gibbonco/titan; GOPATH=${WRKSRC} go get ./...
+	@cd ${WRKSRC}/src/github.com/gibbonco/titan; GOPATH=${WRKSRC} go get -d ./...
 	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
 
 do-install:
