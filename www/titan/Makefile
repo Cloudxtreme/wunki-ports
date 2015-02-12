@@ -21,7 +21,7 @@ post-patch:
 	ls -la
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmt/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
+	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt/bin/tt ${STAGEDIR}${PREFIX}/bin/
