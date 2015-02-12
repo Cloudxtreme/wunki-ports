@@ -11,7 +11,7 @@ COMMENT=	Central API for Gibbon
 LICENSE=	MPL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go\
-	${LOCALBASE}/bin/git:${PORTSDIR/devel/git}
+	${LOCALBASE}/bin/git:${PORTSDIR}/devel/git}
 
 USES=		compiler
 STRIP=		# stripping can break go binaries
