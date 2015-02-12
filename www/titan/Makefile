@@ -17,8 +17,8 @@ STRIP=		# stripping can break go binaries
 
 post-patch:
 	${MKDIR} ${WRKSRC}/src/github.com/gibbonco/titan
-	cd ${WRKSRC}
-	ls -la
+	ls -la ${WRKSRC}
+	ls -la ${WRKDIR}
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
