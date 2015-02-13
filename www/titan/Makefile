@@ -3,7 +3,6 @@ PORTVERSION=	0.1.0
 PORTREVISION= 1
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/gibbon-deployment/
-DISTFILES=	titan-73df5e5.tar.gz
 
 MAINTAINER=	petar@wunki.org
 COMMENT=	Central API for Gibbon
