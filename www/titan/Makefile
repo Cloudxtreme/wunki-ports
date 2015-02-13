@@ -16,6 +16,8 @@ USES=		compiler
 STRIP=		# stripping can break go binaries
 
 post-patch:
+	ls -la ${WRKSRC}
+	ls -la ${WRKDIR}
 	${MKDIR} ${WRKSRC}/src/github.com/gibbonco
 	@${MV} ${WRKDIR}/titan ${WRKSRC}/src/github.com/gibbonco
 
