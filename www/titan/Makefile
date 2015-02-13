@@ -16,10 +16,8 @@ USES=		compiler
 STRIP=		# stripping can break go binaries
 
 post-patch:
-	ls -la ${WRKSRC}
-	ls -la ${WRKDIR}
 	${MKDIR} ${WRKSRC}/src/github.com/gibbonco
-	@${MV} ${WRKDIR}/titan ${WRKSRC}/src/github.com/gibbonco
+	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/gibbonco/titan
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
