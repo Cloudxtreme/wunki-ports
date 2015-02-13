@@ -1,5 +1,5 @@
 PORTNAME=	titan
-PORTVERSION=	0.1.0
+PORTVERSION=	0.0.1-33
 PORTREVISION= 1
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/gibbon-deployment/
