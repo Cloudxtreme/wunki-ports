@@ -6,6 +6,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	shells
 MASTER_SITES= https://github.com/fish-shell/fish-shell/archive/
 DISTFILES= ${PORTVERSION}.tar.gz
+DISTNAME= fish-shell-${PORTVERSION}
 
 MAINTAINER=	freebsd.users@gmail.com
 COMMENT=	User friendly command line shell
