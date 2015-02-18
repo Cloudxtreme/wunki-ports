@@ -1,6 +1,6 @@
 PORTNAME=	titan
-PORTVERSION=	0.1.0
-PORTREVISION= 1
+DISTVERSION= 0.0.1-37
+
 CATEGORIES=	www
 MASTER_SITES=	https://s3.amazonaws.com/gibbon-deployment/
 
@@ -17,7 +17,7 @@ STRIP=		# stripping can break go binaries
 
 post-patch:
 	${MKDIR} ${WRKSRC}/src/github.com/gibbonco
-	@${MV} ${WRKDIR}/titan ${WRKSRC}/src/github.com/gibbonco
+	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/gibbonco/titan
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/gibbonco/titan/cmd/tt; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/tt
