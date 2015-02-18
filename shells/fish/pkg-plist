@@ -4,11 +4,6 @@ bin/fish_pager
 bin/fishd
 bin/mimedb
 %%ETCDIR%%/config.fish
-man/man1/fish.1.gz
-man/man1/fish_indent.1.gz
-man/man1/fish_pager.1.gz
-man/man1/fishd.1.gz
-man/man1/mimedb.1.gz
 %%DATADIR%%/completions/abook.fish
 %%DATADIR%%/completions/acat.fish
 %%DATADIR%%/completions/accept.fish
