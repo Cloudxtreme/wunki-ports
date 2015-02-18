@@ -31,6 +31,8 @@ NLS_CONFIGURE_OFF=	--without-gettext
 DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-Makefile.in
 
 post-patch:
+	ls -la ${WRKDIR}
+	ls -la ${WRKSRC}
 	@${REINPLACE_CMD} -e \
 		'/^all:/s|user_doc|| ; \
 		 s| "$$(HAVE_GETTEXT)" = 1| x$$(HAVE_GETTEXT) = x1| ; \
