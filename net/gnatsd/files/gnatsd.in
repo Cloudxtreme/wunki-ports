@@ -9,18 +9,20 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# gnatsd_enable (bool):	Set to NO by default.
-#				        Set it to YES to enable gnatsd.
-# gnatsd_user (user):        Set user to run gnatsd.
-#                               Default is "gnatsd".
-# gnatsd_group (group):      Set group to run gnatsd.
-#                               Default is "gnatsd".
-# gnatsd_address (address):  Set address to run gnatsd on.
-#                               Default is "0.0.0.0".
-# gnatsd_port (port):        Set port to run gnatsd.
-#                               Default is "4222".
-# gnatsd_log_dir (dir):      Set logfile to log output to this directory.
-#                               Default is "/var/log/gnatsd".
+# gnatsd_enable (bool):	    Set to NO by default.
+#				            Set it to YES to enable gnatsd.
+# gnatsd_user (user):       Set user to run gnatsd.
+#                              Default is "gnatsd".
+# gnatsd_group (group):     Set group to run gnatsd.
+#                              Default is "gnatsd".
+# gnatsd_address (address): Set address to run gnatsd on.
+#                              Default is "0.0.0.0".
+# gnatsd_port (port):       Set port to run gnatsd.
+#                              Default is "4222".
+# gnatsd_log_dir (dir):     Set logfile to log output to this directory.
+#                              Default is "/var/log/gnatsd".
+# gnatsd_config (file):     Set file where there is configuration for gnatsd.
+#                              Default is no config file.
 
 . /etc/rc.subr
 
@@ -35,11 +37,12 @@ load_rc_config $name
 : ${gnatsd_address:="0.0.0.0"}
 : ${gnatsd_port:="4222"}
 : ${gnatsd_log_dir:="/var/log/gnatsd"}
+: ${gnatsd_config:=""}
 
 pidfile=/var/run/gnatsd.pid
 procname="%%PREFIX%%/bin/gnatsd"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log_dir}/daemon.log ${gnatsd_args}"
+command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log_dir}/daemon.log -c ${gnatsd_config} ${gnatsd_args}"
 
 start_precmd=gnatsd_startprecmd
 
