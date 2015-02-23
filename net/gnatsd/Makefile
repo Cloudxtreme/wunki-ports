@@ -31,7 +31,6 @@ post-patch:
 
 do-build:
 	@cd ${WRKSRC}/src/github.com/apcera/gnatsd; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o ${WRKSRC}/bin/${PORTNAME}
-	ls -la ${WRKSRC}/bin/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
