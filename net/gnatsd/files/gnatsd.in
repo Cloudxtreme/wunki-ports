@@ -39,7 +39,7 @@ load_rc_config $name
 pidfile=/var/run/gnatsd.pid
 procname="%%PREFIX%%/bin/gnatsd"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log_dir}/daemon.log"
+command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log_dir}/daemon.log ${gnatsd_args}"
 
 start_precmd=gnatsd_startprecmd
 
