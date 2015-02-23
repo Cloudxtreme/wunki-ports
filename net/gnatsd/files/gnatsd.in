@@ -42,12 +42,16 @@ load_rc_config $name
 pidfile=/var/run/gnatsd.pid
 procname="%%PREFIX%%/bin/gnatsd"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log_dir}/daemon.log -c ${gnatsd_config} ${gnatsd_args}"
+command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log_dir}/daemon.log ${gnatsd_args}"
 
 start_precmd=gnatsd_startprecmd
 
 gnatsd_startprecmd()
 {
+        if [ -n ${gnatsd_config} ]; then
+            rc_flags='${rc_flags} -c ${gnatsd_config}'
+        fi
+
         if [ ! -e ${pidfile} ]; then
                 install -o ${gnatsd_user} -g ${gnatsd_group} /dev/null ${pidfile};
         fi
