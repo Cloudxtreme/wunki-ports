@@ -19,8 +19,8 @@
 #                               Default is "0.0.0.0".
 # gnatsd_port (port):        Set port to run gnatsd.
 #                               Default is "4222".
-# gnatsd_log (log):          Set logfile to log output to.
-#                               Default is "/var/log/gnatsd.log".
+# gnatsd_log_dir (dir):      Set logfile to log output to this directory.
+#                               Default is "/var/log/gnatsd".
 
 . /etc/rc.subr
 
@@ -34,12 +34,12 @@ load_rc_config $name
 : ${gnatsd_group:="gnatsd"}
 : ${gnatsd_address:="0.0.0.0"}
 : ${gnatsd_port:="4222"}
-: ${gnatsd_log:="/var/log/gnatsd.log"}
+: ${gnatsd_log_dir:="/var/log/gnatsd"}
 
 pidfile=/var/run/gnatsd.pid
 procname="%%PREFIX%%/bin/gnatsd"
 command="/usr/sbin/daemon"
-command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log}"
+command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log_dir}/daemon.log"
 
 start_precmd=gnatsd_startprecmd
 
@@ -48,6 +48,11 @@ gnatsd_startprecmd()
         if [ ! -e ${pidfile} ]; then
                 install -o ${gnatsd_user} -g ${gnatsd_group} /dev/null ${pidfile};
         fi
+
+        if [ ! -d ${gnatsd_log_dir} ]; then
+                install -d -o ${gnatsd_user} -g ${gnatsd_group} ${gnatsd_log_dir}
+        fi
+
 }
 
 run_rc_command "$1"
