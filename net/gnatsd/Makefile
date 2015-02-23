@@ -11,7 +11,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	apcera
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT= 	62c5c4d
+GH_COMMIT= 	7f26734
 
 USES=		compiler
 STRIP=		# stripping can break go binaries
