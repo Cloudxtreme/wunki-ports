@@ -8,15 +8,13 @@ LICENSE=		MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
-USES=		compiler
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	apcera
-GH_COMMIT= 62c5c4d
 GH_TAGNAME=	v${PORTVERSION}
+GH_COMMIT= 	62c5c4d
 
+USES=		compiler
 STRIP=		# stripping can break go binaries
-
 
 PLIST_FILES=    gnatsd
 
