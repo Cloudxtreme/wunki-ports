@@ -48,8 +48,8 @@ start_precmd=gnatsd_startprecmd
 
 gnatsd_startprecmd()
 {
-        if [ -n ${gnatsd_config} ]; then
-            rc_flags='${rc_flags} -c ${gnatsd_config}'
+        if [ -n "${gnatsd_config}" ]; then
+            rc_flags="${rc_flags} -c ${gnatsd_config}"
         fi
 
         if [ ! -e ${pidfile} ]; then
