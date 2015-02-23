@@ -27,12 +27,10 @@ DOCS_DESC=      Install gnatsd README file
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/apcera
-	ls -la ${WRKDIR}
-	ls -la ${WRKSRC}
-	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/appcera/gnatsd
+	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/apcera/gnatsd
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/appcera/gnatsd; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/gnatsd
+	@cd ${WRKSRC}/src/github.com/apcera/gnatsd; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/gnatsd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gnatsd ${STAGEDIR}${PREFIX}/bin/
