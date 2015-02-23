@@ -28,6 +28,8 @@ DOCS_DESC=      Install gnatsd README file
 
 post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/apcera
+	ls -la ${WRKDIR}
+	ls -la ${WRKSRC}
 	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/appcera/gnatsd
 
 do-build:
