@@ -12,6 +12,7 @@ USES=		compiler
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	apcera
+GH_COMMIT= 62c5c4d
 GH_TAGNAME=	v${PORTVERSION}
 
 STRIP=		# stripping can break go binaries
