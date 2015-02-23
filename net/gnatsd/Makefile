@@ -30,7 +30,7 @@ post-patch:
 	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/apcera/gnatsd
 
 do-build:
-	@cd ${WRKSRC}/src/github.com/apcera/gnatsd; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/gnatsd
+	@cd ${WRKSRC}/src/github.com/apcera/gnatsd; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o ${WRKSRC}/bin/gnatsd
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gnatsd ${STAGEDIR}${PREFIX}/bin/
