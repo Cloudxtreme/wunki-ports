@@ -1,0 +1,53 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: gnatsd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# gnatsd_enable (bool):	Set to NO by default.
+#				        Set it to YES to enable gnatsd.
+# gnatsd_user (user):        Set user to run gnatsd.
+#                               Default is "gnatsd".
+# gnatsd_group (group):      Set group to run gnatsd.
+#                               Default is "gnatsd".
+# gnatsd_address (address):  Set address to run gnatsd on.
+#                               Default is "0.0.0.0".
+# gnatsd_port (port):        Set port to run gnatsd.
+#                               Default is "4222".
+# gnatsd_log (log):          Set logfile to log output to.
+#                               Default is "/var/log/gnatsd.log".
+
+. /etc/rc.subr
+
+name=gnatsd
+rcvar=gnatsd_enable
+
+load_rc_config $name
+
+: ${gnatsd_enable:="NO"}
+: ${gnatsd_user:="gnatsd"}
+: ${gnatsd_group:="gnatsd"}
+: ${gnatsd_address:="0.0.0.0"}
+: ${gnatsd_port:="4222"}
+: ${gnatsd_log:="/var/log/gnatsd.log"}
+
+pidfile=/var/run/gnatsd.pid
+procname="%%PREFIX%%/bin/gnatsd"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} -a ${gnatsd_address} -p ${gnatsd_port} -l ${gnatsd_log}"
+
+start_precmd=gnatsd_startprecmd
+
+gnatsd_startprecmd()
+{
+        if [ ! -e ${pidfile} ]; then
+                install -o ${gnatsd_user} -g ${gnatsd_group} /dev/null ${pidfile};
+        fi
+}
+
+run_rc_command "$1"

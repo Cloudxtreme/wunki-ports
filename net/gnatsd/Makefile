@@ -16,6 +16,7 @@ GH_COMMIT= 	7f26734
 USES=		compiler
 STRIP=		# stripping can break go binaries
 
+USE_RC_SUBR=	gnatsd
 PLIST_FILES=    bin/gnatsd
 
 PORTDOCS=       README.md
