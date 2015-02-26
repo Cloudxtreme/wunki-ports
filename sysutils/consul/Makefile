@@ -5,12 +5,12 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAM
 		https://github.com/armon/circbuf/archive/f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz?dummy=/:group2 \
 		https://github.com/armon/go-metrics/archive/88b7658f24511c4b885942b26e9ea7a61ee37ebc.tar.gz?dummy=/:group3 \
 		https://github.com/armon/go-radix/archive/e39d623f12e8e41c7b5529e9a9dd67a1e2261f80.tar.gz?dummy=/:group4 \
-		https://github.com/armon/gomdb/archive/ac3963b72ac367e48b1e68a831e62b93fb69091c.tar.gz?dummy=/:group5 \
-		https://github.com/golang/protobuf/proto/archive/5677a0e3d5e89854c9974e1256839ee23f8233ca.tar.gz?dummy=/:group6 \
+		https://github.com/armon/gomdb/archive/151f2e08ef45cb0e57d694b2562f351955dff572.tar.gz?dummy=/:group5 \
+		https://github.com/golang/protobuf/archive/5677a0e3d5e89854c9974e1256839ee23f8233ca.tar.gz?dummy=/:group6 \
 		https://github.com/hashicorp/go-checkpoint/archive/88326f6851319068e7b34981032128c0b1a6524d.tar.gz?dummy=/:group7 \
 		https://github.com/hashicorp/go-msgpack/archive/71c2886f5a673a35f909803f38ece5810165097b.tar.gz?dummy=/:group8 \
 		https://github.com/hashicorp/go-multierror/archive/fcdddc395df1ddf4247c69bd436e84cfa0733f7e.tar.gz?dummy=/:group9 \
-		https://github.com/hashicorp/go-syslog/archive/71c2886f5a673a35f909803f38ece5810165097b.tar.gz?dummy=/:group10 \
+		https://github.com/hashicorp/go-syslog/archive/42a2b573b664dbf281bd48c3cc12c086b17a39ba.tar.gz?dummy=/:group10 \
 		https://github.com/hashicorp/golang-lru/archive/f09f965649501e2ac1b0c310c632a7bebdbdc1d4.tar.gz?dummy=/:group11 \
 		https://github.com/hashicorp/hcl/archive/513e04c400ee2e81e97f5e011c08fb42c6f69b84.tar.gz?dummy=/:group12 \
 		https://github.com/hashicorp/logutils/archive/23b0af5510a2d1442103ef83ffcf53eb82f3debc.tar.gz?dummy=/:group13 \
@@ -23,7 +23,7 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAM
 		https://github.com/hashicorp/yamux/archive/b4f943b3f25da97dec8e26bee1c3269019de070d.tar.gz?dummy=/:group20 \
 		https://github.com/inconshreveable/muxado/archive/f693c7e88ba316d1a0ae3e205e22a01aa3ec2848.tar.gz?dummy=/:group21 \
 		https://github.com/matttproud/golang_protobuf_extensions/archive/ba7d65ac66e9da93a714ca18f6d1bc7a0c09100c.tar.gz?dummy=/:group22 \
-		https://github.com/miekg/dns/64fea017a260b4ccbfbb3f60ab027e0398cd8f6f.tar.gz?dummy=/:group23 \
+		https://github.com/miekg/dns/archive/64fea017a260b4ccbfbb3f60ab027e0398cd8f6f.tar.gz?dummy=/:group23 \
 		https://github.com/mitchellh/cli/archive/e3c2e3d39391e9beb9660ccd6b4bd9a2f38dd8a0.tar.gz?dummy=/:group24 \
 		https://github.com/mitchellh/mapstructure/archive/442e588f213303bec7936deba67901f8fc8f18b1.tar.gz?dummy=/:group25 \
 		https://github.com/prometheus/client_golang/archive/38dbb2e26868d15db0275ddbaac0cbe450ec03de.tar.gz?dummy=/:group26 \
@@ -35,12 +35,12 @@ DISTFILES=	consul-0.5.0.tar.gz:group1 \
 		armon_circbuf_f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz:group2 \
 		armon_go-metrics_2b75159ce5d3641fb35b5a159cff309ac3cf4177.tar.gz:group3 \
 		armon_go-radix_b045fc0ad3587e8620fb42a0dea882cf8c08aef9.tar.gz:group4 \
-		armon_gomdb_ac3963b72ac367e48b1e68a831e62b93fb69091c.tar.gz:group5 \
+		armon_gomdb_151f2e08ef45cb0e57d694b2562f351955dff572.tar.gz:group5 \
 		golang_protobuf_5677a0e3d5e89854c9974e1256839ee23f8233ca.tar.gz:group6 \
 		hashicorp_go-checkpoint_88326f6851319068e7b34981032128c0b1a6524d.tar.gz:group7 \
 		hashicorp_go-msgpack_71c2886f5a673a35f909803f38ece5810165097b.tar.gz:group8 \
 		hashicorp_go-multierror_fcdddc395df1ddf4247c69bd436e84cfa0733f7e.tar.gz:group9 \
-		hashicorp_go-syslog_71c2886f5a673a35f909803f38ece5810165097b.tar.gz:group10 \
+		hashicorp_go-syslog_42a2b573b664dbf281bd48c3cc12c086b17a39ba.tar.gz:group10 \
 		hashicorp_golang-lru_f09f965649501e2ac1b0c310c632a7bebdbdc1d4.tar.gz:group11 \
 		hashicorp_hcl_513e04c400ee2e81e97f5e011c08fb42c6f69b84.tar.gz:group12 \
 		hashicorp_logutils_23b0af5510a2d1442103ef83ffcf53eb82f3debc.tar.gz:group13 \
@@ -108,7 +108,7 @@ post-patch:
 		${WRKSRC}/src/github.com/armon/go-metrics
 	@${MV} ${WRKDIR}/go-radix-b045fc0ad3587e8620fb42a0dea882cf8c08aef9 \
 		${WRKSRC}/src/github.com/armon/go-radix
-	@${MV} ${WRKDIR}/gomdb-ac3963b72ac367e48b1e68a831e62b93fb69091c \
+	@${MV} ${WRKDIR}/gomdb-151f2e08ef45cb0e57d694b2562f351955dff572 \
 		${WRKSRC}/src/github.com/armon/gomdb
 	@${MV} ${WRKDIR}/protobuf-5677a0e3d5e89854c9974e1256839ee23f8233ca \
 		${WRKSRC}/src/github.com/golang/protobuf
@@ -118,7 +118,7 @@ post-patch:
 		${WRKSRC}/src/github.com/hashicorp/go-msgpack
 	@${MV} ${WRKDIR}/go-multierror-fcdddc395df1ddf4247c69bd436e84cfa0733f7e \
 		${WRKSRC}/src/github.com/hashicorp/go-multierror
-	@${MV} ${WRKDIR}/go-syslog-71c2886f5a673a35f909803f38ece5810165097b \
+	@${MV} ${WRKDIR}/go-syslog-42a2b573b664dbf281bd48c3cc12c086b17a39ba \
 		${WRKSRC}/src/github.com/hashicorp/go-syslog
 	@${MV} ${WRKDIR}/golang-lru-f09f965649501e2ac1b0c310c632a7bebdbdc1d4 \
 		${WRKSRC}/src/github.com/hashicorp/golang-lru
