@@ -50,16 +50,16 @@ DISTFILES=	consul-0.5.0.tar.gz:group1 \
 		hashicorp_raft-mdb_4ec3694ffbc74d34f7532e70ef2e9c3546a0c0b0.tar.gz:group17 \
 		hashicorp_scada-client_c26580cfe35393f6f4bf1b9ba55e6afe33176bae.tar.gz:group18 \
 		hashicorp_serf_cc95df950d69acfd117128c98a3bc6b64c1da3fd.tar.gz:group19 \
-		hashicorp_yamux_b4f943b3f25da97dec8e26bee1c3269019de070d.tar.gz?dummy=/:group20 \
-		inconshreveable_muxado_f693c7e88ba316d1a0ae3e205e22a01aa3ec2848.tar.gz?dummy=/:group21 \
-		matttproud_golang-protobuf-extensions_ba7d65ac66e9da93a714ca18f6d1bc7a0c09100c.tar.gz?dummy=/:group22 \
-		miekg_dns_64fea017a260b4ccbfbb3f60ab027e0398cd8f6f.tar.gz?dummy=/:group23 \
-		mitchellh_cli_e3c2e3d39391e9beb9660ccd6b4bd9a2f38dd8a0.tar.gz?dummy=/:group24 \
-		mitchellh_mapstructure_442e588f213303bec7936deba67901f8fc8f18b1.tar.gz?dummy=/:group25 \
-		prometheus_client-golang_38dbb2e26868d15db0275ddbaac0cbe450ec03de.tar.gz?dummy=/:group26 \
-		prometheus_client-model_fa8ad6fec33561be4280a8f0514318c79d7f6cb6.tar.gz?dummy=/:group27 \
-		prometheus_procfs_92faa308558161acab0ada1db048e9996ecec160.tar.gz?dummy=/:group28 \
-		ryanuber_columnize_44cb4788b2ec3c3d158dd3d1b50aba7d66f4b59a.tar.gz?dummy=/:group29 \
+		hashicorp_yamux_b4f943b3f25da97dec8e26bee1c3269019de070d.tar.gz:group20 \
+		inconshreveable_muxado_f693c7e88ba316d1a0ae3e205e22a01aa3ec2848.tar.gz:group21 \
+		matttproud_golang-protobuf-extensions_ba7d65ac66e9da93a714ca18f6d1bc7a0c09100c.tar.gz:group22 \
+		miekg_dns_64fea017a260b4ccbfbb3f60ab027e0398cd8f6f.tar.gz:group23 \
+		mitchellh_cli_e3c2e3d39391e9beb9660ccd6b4bd9a2f38dd8a0.tar.gz:group24 \
+		mitchellh_mapstructure_442e588f213303bec7936deba67901f8fc8f18b1.tar.gz:group25 \
+		prometheus_client-golang_38dbb2e26868d15db0275ddbaac0cbe450ec03de.tar.gz:group26 \
+		prometheus_client-model_fa8ad6fec33561be4280a8f0514318c79d7f6cb6.tar.gz:group27 \
+		prometheus_procfs_92faa308558161acab0ada1db048e9996ecec160.tar.gz:group28 \
+		ryanuber_columnize_44cb4788b2ec3c3d158dd3d1b50aba7d66f4b59a.tar.gz:group29 \
 		0.5.0_web_ui.zip:group30
 
 MAINTAINER=	swills@FreeBSD.org
