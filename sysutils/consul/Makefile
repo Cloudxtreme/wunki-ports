@@ -144,8 +144,8 @@ post-patch:
 		${WRKSRC}/src/github.com/hashicorp/yamux
 	@${MV} ${WRKDIR}/muxado-f693c7e88ba316d1a0ae3e205e22a01aa3ec2848 \
 		${WRKSRC}/src/github.com/inconshreveable/muxado
-	@${MV} ${WRKDIR}/golang-protobuf-extensions-ba7d65ac66e9da93a714ca18f6d1bc7a0c09100c \
-		${WRKSRC}/src/github.com/matttproud/golang-protobuf-extensions
+	@${MV} ${WRKDIR}/golang_protobuf_extensions-ba7d65ac66e9da93a714ca18f6d1bc7a0c09100c \
+		${WRKSRC}/src/github.com/matttproud/golang_protobuf_extensions
 	@${MV} ${WRKDIR}/dns-64fea017a260b4ccbfbb3f60ab027e0398cd8f6f \
 		${WRKSRC}/src/github.com/miekg/dns
 	@${MV} ${WRKDIR}/cli-e3c2e3d39391e9beb9660ccd6b4bd9a2f38dd8a0 \
