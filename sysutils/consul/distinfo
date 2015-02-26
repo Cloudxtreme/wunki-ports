@@ -56,5 +56,5 @@ SHA256 (prometheus_procfs_92faa308558161acab0ada1db048e9996ecec160.tar.gz) = faf
 SIZE (prometheus_procfs_92faa308558161acab0ada1db048e9996ecec160.tar.gz) = 11214
 SHA256 (ryanuber_columnize_44cb4788b2ec3c3d158dd3d1b50aba7d66f4b59a.tar.gz) =  504519c9befbac3045a00a7a70e82cc437622294ece6ac19b85ffd4aa915369
 SIZE (ryanuber_columnize_44cb4788b2ec3c3d158dd3d1b50aba7d66f4b59a.tar.gz) = 3680
-SHA256 (0.5.0_web_ui.zip) = 
+SHA256 (0.5.0_web_ui.zip) = 0081d08be9c0b1172939e92af5a7cf9ba4f90e54fae24a353299503b24bb8be9
 SIZE (0.5.0_web_ui.zip) = 252567
