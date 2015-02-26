@@ -152,10 +152,10 @@ post-patch:
 		${WRKSRC}/src/github.com/mitchellh/cli
 	@${MV} ${WRKDIR}/mapstructure-442e588f213303bec7936deba67901f8fc8f18b1 \
 		${WRKSRC}/src/github.com/mitchellh/mapstructure
-	@${MV} ${WRKDIR}/client-golang-38dbb2e26868d15db0275ddbaac0cbe450ec03de \
-		${WRKSRC}/src/github.com/prometheus/client-golang
-	@${MV} ${WRKDIR}/client-model-fa8ad6fec33561be4280a8f0514318c79d7f6cb6 \
-		${WRKSRC}/src/github.com/prometheus/client-model
+	@${MV} ${WRKDIR}/client_golang-38dbb2e26868d15db0275ddbaac0cbe450ec03de \
+		${WRKSRC}/src/github.com/prometheus/client_golang
+	@${MV} ${WRKDIR}/client_model-fa8ad6fec33561be4280a8f0514318c79d7f6cb6 \
+		${WRKSRC}/src/github.com/prometheus/client_model
 	@${MV} ${WRKDIR}/procfs-92faa308558161acab0ada1db048e9996ecec160 \
 		${WRKSRC}/src/github.com/prometheus/procfs
 	@${MV} ${WRKDIR}/columnize-44cb4788b2ec3c3d158dd3d1b50aba7d66f4b59a \
