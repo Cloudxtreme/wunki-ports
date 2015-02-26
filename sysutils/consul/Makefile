@@ -94,6 +94,8 @@ post-patch:
 	@${MV} ${WRKSRC}/${src} \
 		${WRKSRC}/src/github.com/hashicorp/consul
 .endfor
+	ls -l ${WRKDIR}
+	ls -l ${WRKSRC}
 	@${MKDIR} ${WRKSRC}/src/github.com/armon
 	@${MKDIR} ${WRKSRC}/src/github.com/golang
 	@${MKDIR} ${WRKSRC}/src/github.com/inconshreveable
