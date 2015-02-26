@@ -1,5 +1,5 @@
 SHA256 (consul-0.5.0.tar.gz) = 16e681a7d88b1aa7422767c7bb77caa4ec530b313058d7b2bfd896132b8b63c2
-SIZE (consul-0.5.0.tar.gz) = 1517746
+SIZE (consul-0.5.0.tar.gz) = 1608079
 SHA256 (armon_go-metrics_2b75159ce5d3641fb35b5a159cff309ac3cf4177.tar.gz) = b67d2ffc0a725b6844895680d52ba4a63757987637c8dabbb2c3e4d836512d52
 SIZE (armon_go-metrics_2b75159ce5d3641fb35b5a159cff309ac3cf4177.tar.gz) = 2748
 SHA256 (armon_go-radix_b045fc0ad3587e8620fb42a0dea882cf8c08aef9.tar.gz) = b67d2ffc0a725b6844895680d52ba4a63757987637c8dabbb2c3e4d836512d52
