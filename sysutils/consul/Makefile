@@ -134,8 +134,8 @@ post-patch:
 		${WRKSRC}/src/github.com/hashicorp/raft
 	@${MV} ${WRKDIR}/raft-mdb-4ec3694ffbc74d34f7532e70ef2e9c3546a0c0b0 \
 		${WRKSRC}/src/github.com/hashicorp/raft-mdb
-	@${MV} ${WRKDIR}/raft-scada-client-c26580cfe35393f6f4bf1b9ba55e6afe33176bae \
-		${WRKSRC}/src/github.com/hashicorp/raft-scada-client
+	@${MV} ${WRKDIR}/scada-client-c26580cfe35393f6f4bf1b9ba55e6afe33176bae \
+		${WRKSRC}/src/github.com/hashicorp/scada-client
 	@${MV} ${WRKDIR}/serf-cc95df950d69acfd117128c98a3bc6b64c1da3fd \
 		${WRKSRC}/src/github.com/hashicorp/serf	
 	@${MV} ${WRKDIR}/yamux-b4f943b3f25da97dec8e26bee1c3269019de070d \
