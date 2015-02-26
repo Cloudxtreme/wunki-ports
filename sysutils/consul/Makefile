@@ -33,8 +33,8 @@ MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/archive/${GH_TAGNAM
 		https://dl.bintray.com/mitchellh/consul/:group30
 DISTFILES=	consul-0.5.0.tar.gz:group1 \
 		armon_circbuf_f092b4f207b6e5cce0569056fba9e1a2735cb6cf.tar.gz:group2 \
-		armon_go-metrics_2b75159ce5d3641fb35b5a159cff309ac3cf4177.tar.gz:group3 \
-		armon_go-radix_b045fc0ad3587e8620fb42a0dea882cf8c08aef9.tar.gz:group4 \
+		armon_go-metrics_88b7658f24511c4b885942b26e9ea7a61ee37ebc.tar.gz:group3 \
+		armon_go-radix_e39d623f12e8e41c7b5529e9a9dd67a1e2261f80.tar.gz:group4 \
 		armon_gomdb_151f2e08ef45cb0e57d694b2562f351955dff572.tar.gz:group5 \
 		golang_protobuf_5677a0e3d5e89854c9974e1256839ee23f8233ca.tar.gz:group6 \
 		hashicorp_go-checkpoint_88326f6851319068e7b34981032128c0b1a6524d.tar.gz:group7 \
@@ -104,9 +104,9 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/src/github.com/ryanuber
 	@${MV} ${WRKDIR}/circbuf-f092b4f207b6e5cce0569056fba9e1a2735cb6cf \
 		${WRKSRC}/src/github.com/armon/circbuf
-	@${MV} ${WRKDIR}/go-metrics-2b75159ce5d3641fb35b5a159cff309ac3cf4177 \
+	@${MV} ${WRKDIR}/go-metrics-88b7658f24511c4b885942b26e9ea7a61ee37ebc \
 		${WRKSRC}/src/github.com/armon/go-metrics
-	@${MV} ${WRKDIR}/go-radix-b045fc0ad3587e8620fb42a0dea882cf8c08aef9 \
+	@${MV} ${WRKDIR}/go-radix-e39d623f12e8e41c7b5529e9a9dd67a1e2261f80 \
 		${WRKSRC}/src/github.com/armon/go-radix
 	@${MV} ${WRKDIR}/gomdb-151f2e08ef45cb0e57d694b2562f351955dff572 \
 		${WRKSRC}/src/github.com/armon/gomdb
