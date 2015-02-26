@@ -44,7 +44,7 @@ DISTFILES=	consul-0.5.0.tar.gz:group1 \
 		hashicorp_golang-lru_f09f965649501e2ac1b0c310c632a7bebdbdc1d4.tar.gz:group11 \
 		hashicorp_hcl_513e04c400ee2e81e97f5e011c08fb42c6f69b84.tar.gz:group12 \
 		hashicorp_logutils_23b0af5510a2d1442103ef83ffcf53eb82f3debc.tar.gz:group13 \
-		hashicorp_memberlist_16d947e2d4b3f1fe508ee1d9b6ec34b8fd2e96d8.tar.gz:group14 \
+		hashicorp_memberlist_9a1e242e454d2443df330bdd51a436d5a9058fc4.tar.gz:group14 \
 		hashicorp_net-rpc-msgpackrpc_d377902b7aba83dd3895837b902f6cf3f71edcb2.tar.gz:group15 \
 		hashicorp_raft_a88bfa8385bc52c1f25d0fc02d1b55a2708d04ab.tar.gz:group16 \
 		hashicorp_raft-mdb_4ec3694ffbc74d34f7532e70ef2e9c3546a0c0b0.tar.gz:group17 \
@@ -126,7 +126,7 @@ post-patch:
 		${WRKSRC}/src/github.com/hashicorp/hcl
 	@${MV} ${WRKDIR}/logutils-23b0af5510a2d1442103ef83ffcf53eb82f3debc \
 		${WRKSRC}/src/github.com/hashicorp/logutils
-	@${MV} ${WRKDIR}/memberlist-16d947e2d4b3f1fe508ee1d9b6ec34b8fd2e96d8 \
+	@${MV} ${WRKDIR}/memberlist-9a1e242e454d2443df330bdd51a436d5a9058fc4 \
 		${WRKSRC}/src/github.com/hashicorp/memberlist
 	@${MV} ${WRKDIR}/net-rpc-msgpackrpc-d377902b7aba83dd3895837b902f6cf3f71edcb2 \
 		${WRKSRC}/src/github.com/hashicorp/net-rpc-msgpackrpc
