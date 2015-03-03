@@ -1,7 +1,7 @@
 PORTNAME=	envconsul
 PORTVERSION=	0.5.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://github.com/hashicorp/envconsul/releases/download
+MASTER_SITES=	https://github.com/hashicorp/envconsul/releases/download/
 DISTFILES= envconsul_${PORTVERSION}_freebsd_amd64.tar.gz
 
 MAINTAINER=	petar@wunki.org
