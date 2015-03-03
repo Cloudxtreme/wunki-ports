@@ -6,12 +6,9 @@ DISTFILES= envconsul_${PORTVERSION}_freebsd_amd64.tar.gz
 
 MAINTAINER=	petar@wunki.org
 COMMENT=	  Read and set environmental variables for processes from Consul
+LICENSE=	  MPL
 
-LICENSE=	MPL
-
-do-build:
-	ls -la ${WRKDIR}
-	ls -la ${WRKSRC}
+WRKSRC= 	  ${WRKDIR}/${PORTNAME}_${PORTVERSION}_freebsd_amd64
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/envconsul ${STAGEDIR}${PREFIX}/bin/
