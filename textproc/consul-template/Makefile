@@ -1,6 +1,6 @@
 PORTNAME=     consul-template
 PORTVERSION=  0.7.0
-CATEGORIES=   sysutils
+CATEGORIES=   textproc
 MASTER_SITES= https://github.com/hashicorp/consul-template/releases/download/v${PORTVERSION}/
 DISTNAME=     ${PORTNAME}_${PORTVERSION}_freebsd_amd64
 
