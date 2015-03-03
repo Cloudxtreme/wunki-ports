@@ -9,6 +9,6 @@ COMMENT=    Read and set environmental variables for processes from Consul
 LICENSE=    MPL
 
 do-install:
-${INSTALL_PROGRAM} ${WRKSRC}/envconsul ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/envconsul ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
