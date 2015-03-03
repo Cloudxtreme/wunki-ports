@@ -8,6 +8,9 @@ MAINTAINER= petar@wunki.org
 COMMENT=    Read and set environmental variables for processes from Consul
 LICENSE=    MPL
 
+do-build:
+	:
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/envconsul ${STAGEDIR}${PREFIX}/bin/
 
