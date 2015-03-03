@@ -12,6 +12,7 @@ do-build:
 	:
 
 do-install:
+	ls -la ${WRKSRC}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
