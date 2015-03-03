@@ -10,8 +10,8 @@ COMMENT=	  Read and set environmental variables for processes from Consul
 LICENSE=	MPL
 
 do-build:
-	ls -la ${WRKSRC}
 	ls -la ${WRKDIR}
+	ls -la ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/envconsul ${STAGEDIR}${PREFIX}/bin/
