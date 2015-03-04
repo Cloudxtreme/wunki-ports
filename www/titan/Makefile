@@ -1,5 +1,6 @@
 PORTNAME= titan
 DISTVERSION= 0.0.1-62
+PORTVERSION= 1
 
 CATEGORIES= 	www
 MASTER_SITES= https://s3.amazonaws.com/gibbon-deployment/
@@ -10,7 +11,7 @@ COMMENT=    Central API for Gibbon
 LICENSE=  	MPL
 
 BUILD_DEPENDS=  ${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
-RUN_DEPENDS= 		${LOCALBASE}/bin/envconsel:${PORTSDIR}/sysutils/envconsul
+RUN_DEPENDS= 		${LOCALBASE}/bin/envconsul:${PORTSDIR}/sysutils/envconsul
 
 USES=   compiler
 STRIP=  # stripping can break go binaries
