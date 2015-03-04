@@ -10,6 +10,7 @@ COMMENT=    Central API for Gibbon
 LICENSE=  	MPL
 
 BUILD_DEPENDS=  ${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+RUN_DEPENDS= 		${LOCALBASE}/bin/envconsel:${PORTSDIR}/sysutils/envconsul
 
 USES=   compiler
 STRIP=  # stripping can break go binaries
@@ -24,6 +25,6 @@ do-build:
 	@cd ${WRKSRC}/src/github.com/gibbonco/titan; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/titan
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/gibbonco/titan/bin/tt ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/gibbonco/titan/bin/titan ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
