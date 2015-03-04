@@ -8,6 +8,8 @@ MAINTAINER= petar@wunki.org
 COMMENT=    Generic template rendering and notifications with Consul
 LICENSE=    MPL
 
+USE_RC_SUBR=	consul_template
+
 do-build:
 	:
 
