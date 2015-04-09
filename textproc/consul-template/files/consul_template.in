@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: consul_template
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# consul_template_enable (bool):        Set to NO by default.
+#                                           Set it to YES to enable consul.
+# consul_template_config (string):      Set config file to run consul template with.
+#                                           Default is "/usr/local/etc/consul-template.json".
+# consul_template_args (string):        Set extra arguments to consul template
+#                                           Default is empty
+
+
+. /etc/rc.subr
+
+name=consul_template
+rcvar=consul_template_enable
+
+load_rc_config $name
+
+: ${consul_template_enable:="NO"}
+: ${consul_template_config:="/usr/local/etc/consul-template.json"}
+: ${consul_template_args:=""}
+
+pidfile=/var/run/consul-template.pid
+procname="%%PREFIX%%/bin/consul-template"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} -config ${consul_template_config} ${consul_template_args}"
+
+run_rc_command "$1"
+
