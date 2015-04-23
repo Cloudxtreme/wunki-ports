@@ -1,2 +1,3 @@
 consul:*:469:469::0:0:Consul Daemon:/var/tmp/consul:/usr/sbin/nologin
 gnatsd:*:470:470::0:0:Gnats Daemon:/nonexistent:/usr/sbin/nologin
+picfit:*:471:471::0:0:Picfit:/nonexistent:/usr/sbin/nologin

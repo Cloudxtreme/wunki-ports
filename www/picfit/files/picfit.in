@@ -1,0 +1,57 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: picfit
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# picfit_enable (bool):	    Set to NO by default.
+#				                       Set it to YES to enable picfit.
+# picfit_user (user):       Set user to run picfit.
+#                              Default is "picfit".
+# picfit_group (group):     Set group to run picfit.
+#                              Default is "picfit".
+# picfit_config (group):    Set configuration to run picfit.
+#                              Default is "/usr/local/etc/picfit.conf".
+
+. /etc/rc.subr
+
+name=picfit
+rcvar=picfit_enable
+
+load_rc_config $name
+
+: ${picfit_enable:="NO"}
+: ${picfit_user:="picfit"}
+: ${picfit_group:="picfit"}
+: ${picfit_log_dir:="/var/log/gnatsd"}
+: ${picfit_config:="/usr/local/etc/picfit.conf"}
+
+pidfile="/var/run/picfit.pid"
+procname="%%PREFIX%%/bin/picfit"
+command="/usr/sbin/daemon"
+command_args="-f -p ${pidfile} ${procname} -c ${picfit_config}"
+
+start_precmd=picfit_startprecmd
+
+picfit_startprecmd()
+{
+        if [ -n "${picfit_config}" ]; then
+            rc_flags="${rc_flags} -c ${picfit_config}"
+        fi
+
+        if [ ! -e ${pidfile} ]; then
+                install -o ${picfit_user} -g ${picfit_group} /dev/null ${pidfile};
+        fi
+
+        if [ ! -d ${picfit_log_dir} ]; then
+                install -d -o ${picfit_user} -g ${picfit_group} ${picfit_log_dir}
+        fi
+
+}
+
+run_rc_command "$1"
