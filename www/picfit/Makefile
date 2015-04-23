@@ -6,7 +6,8 @@ COMMENT=			Picture thumbnailing
 
 LICENSE=			MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
+								${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	thoas
