@@ -35,6 +35,7 @@ post-patch:
 
 do-build:
 	@${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC}; go get github.com/tools/godep; godep restore;
+	@ls -la ${WRKSRC}
 	@cd ${WRKSRC}/src/github.com/thoas/picfit; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o ${WRKSRC}/bin/${PORTNAME}
 
 do-install:
