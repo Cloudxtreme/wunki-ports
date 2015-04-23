@@ -6,13 +6,11 @@ COMMENT=			Picture thumbnailing
 
 LICENSE=			MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go \
-								${LOCALBASE}/bin/git:${PORTSDIR}/devel/git
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	thoas
-GH_TAGNAME=	${PORTVERSION}
-GH_COMMIT= 	490dadb
+GH_ACCOUNT=	wunki
+GH_COMMIT= 089549a
 
 USES=		compiler
 STRIP=		# stripping can break go binaries
@@ -31,16 +29,14 @@ DOCS_DESC=      Install picfit README file
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${MKDIR} ${WRKSRC}/src/github.com/thoas
-	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/thoas/picfit
+	${MKDIR} ${WRKSRC}/src/github.com/wunki
+	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/wunki/picfit
 
 do-build:
-	@cd ${WRKSRC}; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go get github.com/tools/godep;
-	@cd ${WRKSRC}; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} godep restore;
-	@ls -la ${WRKSRC}
-	@cd ${WRKSRC}/src/github.com/thoas/picfit; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o ${WRKSRC}/bin/${PORTNAME}
+	@cd ${WRKSRC}/src/github.com/wunki/picfit; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o bin/picfit
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/github.com/gibbonco/janus/bin/janus ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
+
