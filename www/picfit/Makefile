@@ -13,32 +13,9 @@ GH_ACCOUNT=	thoas
 GH_TAGNAME=	${PORTVERSION}
 GH_COMMIT= 	490dadb
 
-USES=		compiler
-STRIP=		# stripping can break go binaries
-
-PLIST_FILES=    bin/picfit
-
-USE_RC_SUBR=	picfit
-USERS=			picfit
-GROUPS=			picfit
-
-PORTDOCS=       README.md
-
-OPTIONS_DEFINE= DOCS
-DOCS_DESC=      Install picfit README file
+GO_PKGNAME= github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${MKDIR} ${WRKSRC}/src/github.com/thoas
-	@ln -s ${WRKSRC} ${WRKSRC}/src/github.com/thoas/picfit
-
-do-build:
-	@cd ${WRKSRC}; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC}; go get github.com/tools/godep; godep restore;
-	@ls -la ${WRKSRC}
-	@cd ${WRKSRC}/src/github.com/thoas/picfit; ${SETENV} ${BUILD_ENV} GOPATH=${WRKSRC} go build -o ${WRKSRC}/bin/${PORTNAME}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-
+.include "${PORTSDIR}/lang/go/files/bsd.go.mk"
 .include <bsd.port.mk>
