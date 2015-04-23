@@ -14,5 +14,7 @@ GH_COMMIT= 	490dadb
 
 GO_PKGNAME= github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
+OPTIONS_DEFINE=	NONE
+
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"
 .include <bsd.port.mk>
